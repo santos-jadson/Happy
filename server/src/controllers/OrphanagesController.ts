@@ -34,8 +34,10 @@ export default {
             about,
             instructions,
             opening_hours,
-            open_on_weekends
+            open_on_weekends,
         } = req.body
+
+
     
         const orphanagesRepository = getRepository(Orphanage)
         const requestImg = req.files as Express.Multer.File[]
@@ -51,7 +53,7 @@ export default {
             about,
             instructions,
             opening_hours,
-            open_on_weekends,
+            open_on_weekends: open_on_weekends === 'true',
             images
         }
 
